@@ -1,16 +1,18 @@
 define([
 	'underscore',
-	'backbone.localStorage',
+	'backbone',
 	'models/SearchQuery'
 	],
 function(_, Backbone, SearchQuery) {
 	'use strict';
 	
-	var store = new Backbone.LocalStorage(window.store || "SearchQueryCollection"); // for testing purposes
+//	var store = new Backbone.LocalStorage(window.store || "SearchQueryCollection"); // for testing purposes
 
 	var SearchQueryCollection = Backbone.Collection.extend({
-		localStorage: store,
+//		localStorage: store,
 	    model: SearchQuery,
+	    
+		url: '/search',
 	    
 		completed: function() {
 			return this.where({

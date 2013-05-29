@@ -1,14 +1,19 @@
 define([
 	'underscore',
-	'backbone.localStorage'
+	'backbone'
 	],
 function(_, Backbone) {
 	'use strict';
 	
-	var store = new Backbone.LocalStorage(window.store || "SearchQueryCollection"); // for testing purposes
+	 
+//	var store = new Backbone.LocalStorage(window.store || "SearchQueryCollection"); // for testing purposes
 
 	var SearchQuery = Backbone.Model.extend({
-		localStorage: store,
+	
+		url: '/search',
+  
+//		localStorage: store,
+		
 		defaults: {
 			title: "",
 			timestamp: 0,
