@@ -16,19 +16,11 @@ var port = process.env.PORT || 3000;
 var search = function (req, res) {
 	"use strict";
 	
-    var users = [];
-    var config = {
-		firstname: 'Rob',
-		lastname: "O'Doherty",
-		age: 40
-    };
+	var resultObj = {
+		result: "Some YouTube Title from the server"
+	};
 
-    var user = new User(config);
-    
-    console.log (user);
-    
-	users.push({id: 1, firstname: user.firstname, lastname: user.lastname, age: user.age});
-    res.send(users);
+    res.send(resultObj);
 };
 
 app.configure(function() {
@@ -42,22 +34,6 @@ app.configure(function() {
 	
 	console.log (__dirname);
 });
-
-
-var User = function(config) {
-	"use strict";
-	
-	this.defaults = {
-	    firstname: 'firstname',
-	    lastname: 'lastname',
-	    age: 0
-	};
-	
-	if (typeof config == 'object') {
-		this.defaults = $.extend (this.defaults, config);
-	}
-};
-
 
 
 http.createServer(app).listen(app.get('port'), function(){

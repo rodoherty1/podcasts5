@@ -8,7 +8,7 @@ function($, _, Backbone, ViewHelper) {
 	
 	var template = _.template(
 		'<a href="#" class="icon-checkbox<%= completed ? " checked" : "" %>"></a>' + 
-		'<p><%= title %></p>' +
+		'<p><%= result %></p>' +
 		'<a href="#" class="icon-delete"></a>');
 
 	var View = Backbone.View.extend({
@@ -16,6 +16,12 @@ function($, _, Backbone, ViewHelper) {
 		
 		initialize: function() {
 			this.model.on('change:completed', this.render, this);
+
+			this.model.fetch({
+				success: function (res) {
+					console.log(res);
+				}
+			});
 		},
     
 		render: function() {

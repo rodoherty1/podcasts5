@@ -23,7 +23,7 @@ function(Backbone, SearchQuery, SearchQueryCollection) {
 				e.preventDefault();
 				
 				this.collection.create({
-					title: this.$input.val().trim(),
+					query: this.$input.val().trim(),
 					timestamp: new Date().getTime()
 				});
 				

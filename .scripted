@@ -19,9 +19,9 @@
 	},
 	
 	"ui": {
-		"font":"Ubuntu Mono",
-	    "font_size":14,
-	    "navigator": true
+		"font":"Courier New",
+    	"font_size":14,
+    	"navigator": true
 	},
 	
 	search: {
@@ -29,7 +29,6 @@
 			'**/*.min.js',
 		],
 		deemphasize: [
-			'node_modules/**',
 			'bower_components/**'
 		]
 	}	
