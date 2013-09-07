@@ -25,14 +25,14 @@ Also, tidy up the project in general.  Move it from being a collection of experi
 Installation
 ------------
 Install the client side dependencies as follows:
-  bower install
+    bower install
   
 There is a temporary server component which is represented in the file js/server.js.
 
 Install the server dependencies as follows:
-  npm install
+    npm install
   
 And then run the server as follows:
-  node js/server.js
+    node js/server.js
   
 
